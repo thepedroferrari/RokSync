@@ -1,0 +1,10 @@
+[package]
+name = "lumen-engine"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Looks, motion and overlay effects rendered per entertainment channel"
+
+[dependencies]
+serde.workspace = true
+lumen-hue.workspace = true

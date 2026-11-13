@@ -1,0 +1,24 @@
+[package]
+name = "lumen-screen"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Screen capture (DXGI desktop duplication, GPU-downscaled) and region-aware colour sampling with black-bar detection"
+
+[dependencies]
+anyhow.workspace = true
+serde.workspace = true
+lumen-hue.workspace = true
+lumen-engine.workspace = true
+
+[target.'cfg(windows)'.dependencies]
+windows = { version = "0.58", features = [
+    "Win32_Foundation",
+    "Win32_Graphics_Direct3D",
+    "Win32_Graphics_Direct3D11",
+    "Win32_Graphics_Dxgi",
+    "Win32_Graphics_Dxgi_Common",
+    "Win32_Graphics_Dwm",
+    "Win32_Graphics_Gdi",
+    "Win32_UI_WindowsAndMessaging",
+] }

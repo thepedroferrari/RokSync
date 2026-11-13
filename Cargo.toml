@@ -1,0 +1,25 @@
+[workspace]
+resolver = "2"
+members = ["crates/lumen-hue", "crates/lumen-engine", "crates/lumen-cs2", "crates/lumen-dota", "crates/lumen-cod", "crates/lumen-screen", "crates/lumen-mood", "app"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+
+[workspace.dependencies]
+anyhow = "1"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+lumen-hue = { path = "crates/lumen-hue" }
+lumen-engine = { path = "crates/lumen-engine" }
+lumen-cs2 = { path = "crates/lumen-cs2" }
+lumen-dota = { path = "crates/lumen-dota" }
+lumen-cod = { path = "crates/lumen-cod" }
+lumen-screen = { path = "crates/lumen-screen" }
+lumen-mood = { path = "crates/lumen-mood" }
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+strip = true

@@ -1,0 +1,17 @@
+[package]
+name = "lumen-cod"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Call of Duty light effects estimated from the screen and PC sound only (never touches the game)"
+
+[dependencies]
+anyhow.workspace = true
+lumen-hue.workspace = true
+lumen-engine.workspace = true
+lumen-screen.workspace = true
+serde.workspace = true
+cpal = "0.15"
+
+[target.'cfg(windows)'.dependencies]
+windows = { version = "0.58", features = ["Win32_Foundation", "Win32_UI_WindowsAndMessaging"] }

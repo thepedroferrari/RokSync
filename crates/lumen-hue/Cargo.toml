@@ -1,0 +1,17 @@
+[package]
+name = "lumen-hue"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Local-only Philips Hue bridge client: pairing, CLIP v2 inventory/control, Entertainment (DTLS) streaming"
+
+[dependencies]
+anyhow.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+reqwest = { version = "0.12", default-features = false, features = ["json", "blocking", "rustls-tls"] }
+tokio = { version = "1", features = ["rt", "net", "time", "macros"] }
+webrtc-dtls = "0.10"
+hex = "0.4"
+mdns-sd = "0.11"
+dirs = "5"

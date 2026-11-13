@@ -1,0 +1,23 @@
+[package]
+name = "lumen-mood"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Describe a mood -> light plan. Local LLM (llama.cpp server, JSON-schema constrained) with an offline keyword fallback"
+
+[dependencies]
+anyhow.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+lumen-hue.workspace = true
+lumen-engine.workspace = true
+reqwest = { version = "0.12", default-features = false, features = ["json", "blocking", "rustls-tls"] }
+sha2 = "0.10"
+hex = "0.4"
+zip = { version = "2", default-features = false, features = ["deflate"] }
+dirs = "5"
+
+[target.'cfg(windows)'.dependencies]
+windows-sys = { version = "0.59", features = ["Win32_Foundation", "Win32_Security", "Win32_System_JobObjects", "Win32_System_Threading"] }
+
+[dev-dependencies]
